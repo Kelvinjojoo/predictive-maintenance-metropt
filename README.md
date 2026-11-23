@@ -1,6 +1,6 @@
 # Isolation Forest vs LSTM Autoencoder: How Early Can We Catch an Air Leak?
 
-> **Work in progress.** The table in [Project steps](#project-steps) shows which steps are done.
+**Live demo:** [air-leak-watch.streamlit.app](https://air-leak-watch.streamlit.app) (replay the test months and see when each model raises its alarm)
 
 A metro train in Porto, Portugal, has an air compressor: the Air Production Unit (APU). It makes the compressed air for the brakes, the doors and the suspension. Sensors on the compressor record its pressures, its oil temperature and its motor current, all day long. Between February and August 2020, the compressor had 4 air leaks.
 
@@ -89,9 +89,11 @@ A small Streamlit app replays the test months the way both models saw them. It r
 
 To open it on your computer, see [How to run](#how-to-run), step 4.
 
+**Online.** The app also runs at [air-leak-watch.streamlit.app](https://air-leak-watch.streamlit.app), on [Streamlit Community Cloud](https://streamlit.io/cloud), for free. It only reads saved files, so it needs no GPU and no PyTorch: `app/requirements.txt` lists the few libraries the cloud installs. An app without visitors for 12 hours goes to sleep; the next visitor wakes it with one click.
+
 ## Dataset
 
-[MetroPT-3](https://archive.ics.uci.edu/dataset/791/metropt+3+dataset) from the UCI Machine Learning Repository. License: CC BY 4.0. It has 15 signals of one compressor, from February to August 2020, and a list of the 4 air leaks.
+[MetroPT-3](https://archive.ics.uci.edu/dataset/791/metropt+3+dataset) by Davari, Veloso, Ribeiro and Gama (2021), from the UCI Machine Learning Repository ([doi:10.24432/C5VW3R](https://doi.org/10.24432/C5VW3R)). License: CC BY 4.0; the notebooks of this project process the data. It has 15 signals of one compressor, from February to August 2020, and a list of the 4 air leaks. The column descriptions and the list of air leaks come from `Data Description_Metro.pdf`, which is part of the download.
 
 ### What is inside the raw data (notebook 1.1)
 
@@ -230,15 +232,3 @@ Library versions are pinned in `requirements.txt` and `requirements-torch.txt`, 
    Then open the Local URL it prints (http://localhost:8501) in your browser. Stop the app with Ctrl+C in the terminal.
 
 Developed on a Windows laptop with an Intel Core Ultra 7 255HX, an NVIDIA GeForce RTX 5070 Laptop GPU (8 GB VRAM) and 32 GB RAM.
-
-## Sources
-
-- MetroPT-3 dataset: Davari, N., Veloso, B., Ribeiro, R., & Gama, J. (2021). *MetroPT-3 Dataset* [Dataset]. UCI Machine Learning Repository. [https://doi.org/10.24432/C5VW3R](https://doi.org/10.24432/C5VW3R) (CC BY 4.0)
-- Davari, N., Veloso, B., Ribeiro, R. P., Pereira, P. M., & Gama, J. (2021). Predictive maintenance based on anomaly detection using deep learning for air production unit in the railway industry. *2021 IEEE 8th International Conference on Data Science and Advanced Analytics (DSAA)*, 1–10. [https://doi.org/10.1109/DSAA53316.2021.9564181](https://doi.org/10.1109/DSAA53316.2021.9564181)
-- Veloso, B., Ribeiro, R. P., Pereira, P. M., & Gama, J. (2022). The MetroPT dataset for predictive maintenance. *Scientific Data, 9*, 764. [https://doi.org/10.1038/s41597-022-01877-3](https://doi.org/10.1038/s41597-022-01877-3)
-- Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. *Neural Computation, 9*(8), 1735–1780. [https://doi.org/10.1162/neco.1997.9.8.1735](https://doi.org/10.1162/neco.1997.9.8.1735)
-- Malhotra, P., Ramakrishnan, A., Anand, G., Vig, L., Agarwal, P., & Shroff, G. (2016). *LSTM-based encoder-decoder for multi-sensor anomaly detection* [Paper presentation]. ICML 2016 Anomaly Detection Workshop, New York, NY, United States. [https://arxiv.org/abs/1607.00148](https://arxiv.org/abs/1607.00148)
-- Liu, F. T., Ting, K. M., & Zhou, Z.-H. (2008). Isolation forest. *2008 Eighth IEEE International Conference on Data Mining*, 413–422. [https://doi.org/10.1109/ICDM.2008.17](https://doi.org/10.1109/ICDM.2008.17)
-- Lundberg, S. M., & Lee, S.-I. (2017). A unified approach to interpreting model predictions. *Advances in Neural Information Processing Systems, 30*, 4765–4774. [https://arxiv.org/abs/1705.07874](https://arxiv.org/abs/1705.07874)
-- Lundberg, S. M., Erion, G., Chen, H., DeGrave, A., Prutkin, J. M., Nair, B., Katz, R., Himmelfarb, J., Bansal, N., & Lee, S.-I. (2020). From local explanations to global understanding with explainable AI for trees. *Nature Machine Intelligence, 2*(1), 56–67. [https://doi.org/10.1038/s42256-019-0138-9](https://doi.org/10.1038/s42256-019-0138-9)
-- The column descriptions and the list of air leaks come from `Data Description_Metro.pdf`, which is part of the MetroPT-3 download.
