@@ -1,0 +1,52 @@
+{
+  "alarm_rule": {
+    "in_a_row": 3,
+    "window_step_minutes": 5,
+    "merge_gap_minutes": 60,
+    "max_false_alarms_per_week": 1
+  },
+  "unusual_march_hours": {
+    "pump_signal": "DV_eletric",
+    "long_pump_minutes": 30,
+    "low_pressure_signal": "LPS",
+    "marked_march_windows": 564,
+    "march_windows": 7194
+  },
+  "limits": {
+    "isolation_forest": {
+      "main": 0.7325970047906787,
+      "all_counted": 0.7327661460419287
+    },
+    "lstm_autoencoder": {
+      "main": 0.7800137996673584,
+      "all_counted": 2.0189945697784424
+    }
+  },
+  "march": {
+    "isolation_forest": {
+      "main": {
+        "false_alarm_events": 3,
+        "monitored_weeks": 3.2886904761904763
+      },
+      "all_counted": {
+        "false_alarm_events": 3,
+        "monitored_weeks": 3.568452380952381
+      }
+    },
+    "lstm_autoencoder": {
+      "main": {
+        "false_alarm_events": 3,
+        "monitored_weeks": 3.2886904761904763
+      },
+      "all_counted": {
+        "false_alarm_events": 3,
+        "monitored_weeks": 3.568452380952381
+      }
+    }
+  },
+  "model_files": {
+    "isolation_forest.joblib": "5097501b4dda5e40b520c88f7c6ebe54ade38ee7484c7d30189ac1f0357f4742",
+    "lstm_autoencoder.pt": "84626161ecb960ac53354e7c16438a270171610dcbe30ff9fc088085e750be69"
+  },
+  "fingerprint": "588120871ddc1d4b931906a50e38a7486bf7daf92e8d633bf966260d015a5784"
+}

@@ -1,0 +1,3 @@
+model,leaks caught,lead time leak 1 (h),lead time leak 2 (h),lead time leak 3 (h),lead time leak 4 (h),false alarm events,false alarms per week,alarms in ignored zones,locked limit
+Isolation Forest,1,,,-3.4166666666666665,,8,0.5405188015282526,1,0.7325970047906787
+LSTM autoencoder,4,-1.5833333333333333,0.0,-0.16666666666666666,13.416666666666666,21,1.418861854011663,45,0.7800137996673584

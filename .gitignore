@@ -1,0 +1,16 @@
+# the MetroPT-3 data: notebook 1.1 downloads it (see README > How to run)
+data/raw/
+
+# tables made from the raw data: the notebooks make them again
+data/processed/
+
+# the project's virtual environment (each computer makes its own, see README)
+.venv/
+
+# Jupyter and Python
+.ipynb_checkpoints/
+__pycache__/
+
+# system files
+.DS_Store
+Thumbs.db
